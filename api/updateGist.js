@@ -9,6 +9,9 @@ export default async function handler(req, res) {
   }
 
   if (req.method === 'POST') {
+ console.log("GitHub Token length:", process.env.GIT_TOKEN?.length);
+  console.log("First 4 chars of token:", process.env.GIT_TOKEN?.slice(0, 4));
+
     const { model, cover, photoset } = req.body;
 
     // GitHub token from Vercel env vars
